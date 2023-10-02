@@ -1,3 +1,4 @@
+%!TEX program = lualatex
 %% The MIT License (MIT)
 %%
 %% Copyright (c) 2015 Daniil Belyakov
@@ -21,15 +22,15 @@
 %% SOFTWARE.
 
 % The font could be set to Windows-specific Calibri by using the 'calibri' option
-\documentclass[]{mcdowellcv}
+\documentclass[calibri]{mcdowellcv}
 
 % For mathematical symbols
 \usepackage{amsmath}
 
 % Set applicant's personal data for header
-\name{Gayle L. McDowell}
-\address{123 Spruce St, Apt 35 \linebreak Philadelphia PA 19103}
-\contacts{(555) 555-1212 \linebreak gayle@careercup.com}
+\name{Zoë Blevins}
+\address{github.com/zsblevins \linebreak linkedin.com/in/zoe-blevins}
+\contacts{(614) 371-7473 \linebreak zsblevins@yahoo.com}
 
 \begin{document}
 
@@ -38,69 +39,50 @@
 	
 	% Print the content
 	\begin{cvsection}{Employment}
-		\begin{cvsubsection}{Software Engineer, Intern}{Apple Computer}{Summer 2004}
-			iChat AV			
+		\begin{cvsubsection}{Senior Software Engineer}{Netflix}{2019 -- Present}	
+
+			\textit{Network State Collection and Ingest}
 			\begin{itemize}
-				\item Reduced time to render the user’s buddy list by 75\% by implementing prediction algorithm.
-				\item Implemented iChat integration with OS X Spotlight Search by creating tool which extracts metadata from saved chat transcripts and provides metadata to a system-wide search database.
-				\item Redesigned chat file format and implemented backwards compatibility for search.
+				\item Implemented dynamic collection configuration loading without system redeploy.
+				\item Added multi-region support to shard out state collection to the nearest AWS region.
+				\item Implemented support for parameterized "command sets", allowing users to pass in and validate parameters to common commands, enabling vendor agnostic execution of common groups of commands.
+				\item Implemented translation of collected state data from numerous vendors into a vendor agnostic datastore.
+			\end{itemize}
+			\bigskip
+			\textit{Configuration Deployment}
+			\begin{itemize}
+				\item Updated backend datastore for core deployment system from Cassandra to CockroachDB.
+				\item Implemented pluggable stages to allow for configuration merge, configuration replace, and OpenConfig deployment strategies while maintaining common render and backup functionality where applicable.
+				\item Implemented a gRPC API to front the system, allowing for generated clients across multiple languages.
+				\item Implemented a gRPC to REST proxy in Go to ease frontend development where gRPC was less practical.
+			\end{itemize}
+			\bigskip
+			\textit{Configuration Modeling}
+			\begin{itemize}
+				\item Streamlined the network modeling and templating experience for the Network Engineers.
+				\item Implemented extensive testing to ensure any model or template change would not result in a failed render for any device currently on the network.
+				\item Performed frequent code reviews to ensure models and templates followed best practices.
+			\end{itemize}
+			\bigskip
+			\textit{Process Automation}
+			\begin{itemize}
+				\item Worked with various OpenConnect teams to tease out their common operations into repeatable, and thus automatable, business processes.
+				\item Implemented numerous workflows to enact change not only on network devices, but across the various applicable sources of truth that went into managing the OpenConnect, Corporate, and Studio networks.
 			\end{itemize}
 		\end{cvsubsection}
 		
-		\begin{cvsubsection}{Lead Student Ambassador}{Microsoft Corporation}{Fall 2003 -- Spring 2005}	
+		\begin{cvsubsection}{Principal Software Engineer}{Yahoo!}{2009 -- 2019}	
+			\textit{Configuration Deployment}
 			\begin{itemize}
-				\item Promoted to Lead Student Ambassador in Fall 2004; supervised 10 -- 15 Student Ambassadors.
-				\item Created and taught Computer Science course, CSE 099: Software Design and Development.
+				\item Developed a system that deployed and validated network changes to tens of thousands of network devices across several datacenters at a controlled rate of release.
+				\item Developed a Django API that covered all desired modifications to the network configuration at various hierarchy levels from the global network down to a single device.
+				\item Detected and alerted on any manual changes to a network device.
+				\item Modeled all configurable components of the datacenter network in MySQL.
 			\end{itemize}
-		\end{cvsubsection}
-		
-		\begin{cvsubsection}{Head Teaching Assistant}{University of Pennsylvania}{Fall 2001 -- Spring 2005}		
+			\bigskip
+			\textit{Network Compliance}
 			\begin{itemize}
-				\item Courses: Advanced Java III, Software Engineering, Mathematical Foundations of Computer Science I \& II.
-				\item Promoted to Head TA in Fall 2004; led weekly meetings and supervised four other TAs.
-			\end{itemize}
-		\end{cvsubsection}
-		
-		\begin{cvsubsection}{Software Design Engineer, Intern}{Microsoft Corporation}{Summers 2001 -- 2003}
-			Visual Studio Core (Summer 2003)		
-			\begin{itemize}
-				\item Implemented a user interface for the VS open file switcher (ctrl-tab) and extended it to tool windows.
-				\item Created service to provide gradient across VS and VS add-ins. Optimized service via caching.
-			\end{itemize}
-			Programmer Productivity Research Center (Summers 2001, 2002)
-			\begin{itemize}
-				\item Built app to compute similarity of all methods in a code base; reduced time from $O(n^2)$ to $O(n\ log\ n)$. 
-				\item Created test case generation tool which creates random XML docs from XML Schema.
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
-	
-	\begin{cvsection}{Education}
-		\begin{cvsubsection}{Philadelphia, PA}{University of Pennsylvania}{Fall 2000 -- May 2005}
-			\begin{itemize}
-				\item M.S.E. in Computer and Information Science, May 2005. GPA: 3.6
-				\item B.S.E. in Computer Science Engineering with Minor in Mathematics, May 2005.  In-major GPA: 3.4.
-				\item Graduate Coursework: Software Foundations; Computer Architecture; Algorithms; Artificial Intelligence; Comparison of Learning Algorithms; Computational Theory.
-				\item Undergraduate Coursework: Operating Systems; Databases; Algorithms; Programming Languages; Comp. Architecture; Engineering Entrepreneurship; Calculus III.
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
-	
-	\begin{cvsection}{Technical Experience}
-		\begin{cvsubsection}{Projects}{}{}
-			\begin{itemize}
-				\item \textbf{Multi-User Drawing Tool} (2004). Electronic classroom where multiple users can view and simultaneously draw on a “chalkboard” with each person’s edits synchronized.  C++, MFC
-				\item \textbf{Synchronized Calendar} (2003 – 2004). Desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users.  C\#.NET, SQL, XML
-				\item \textbf{Operating System} (2002).  UNIX-style OS with scheduler, file system, text editor and calculator. C
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
-	
-	\begin{cvsection}{Additional Experience and Awards}
-		\begin{cvsubsection}{}{}{}	
-			\begin{itemize}
-				\item \textbf{Instructor (2003 – 2005):} Taught two full-credit Computer Science courses; average ratings of 4.8 out of 5.0.
-				\item \textbf{Third Prize, Senior Design Projects:} Awarded 3rd prize for Synchronized Calendar project, out of 100 projects.
+				\item Developed plugins for parsing device configuration and state to identify non-standard and/or insecure configurations
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
@@ -108,11 +90,21 @@
 	\begin{cvsection}{Languages and Technologies}
 		\begin{cvsubsection}{}{}{}	
 			\begin{itemize}
-				\item C++; C; Java; Objective-C; C\#.NET; SQL; JavaScript; XSLT; XML (XSD) Schema 
-				\item Visual Studio; Microsoft SQL Server; Eclipse; XCode; Interface Builder
+				\item Python; Java; Go; Perl;
+				\item MySQL; Postgres; CockroachDB; ElasticSearch; Hive; 
+				\item Django; Flask; FastAPI; Spring Boot; SQLAlchemy; JPA; Hibernate;
+				\item Redis; Kafka; AWS(EC2, ElastiCache, Lambda, S3, SNS, SQS); Docker; Kibana;
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
 	
+	\begin{cvsection}{Education}
+		\begin{cvsubsection}{Columbus, OH}{The Ohio State University}{2008 -- 2012}
+			\begin{itemize}
+				\item B.S. in Computer Science and Engineering. Cum Laude.
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+
 \end{document}
 
